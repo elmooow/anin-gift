@@ -1,15 +1,22 @@
 body {
-  background-color: #FFF4F4; /* Warna pastel lembut */
-  background-image: radial-gradient(circle at top right, #FFDEE9, #B5FFFC); /* Gradien lembut untuk latar belakang */
+  background-color: #fbe7c6; /* Warna background pastel yang lembut */
   font-family: 'Short Stack', sans-serif;
   margin: 0;
   padding: 20px;
-  overflow: hidden;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   min-height: 100vh;
+  overflow: hidden; /* Menjaga kertas tetap dalam tampilan */
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Homemade Apple', cursive;
+  font-size: 2em;
+  color: #d2691e; /* Warna coklat manis untuk judul */
+  margin-bottom: 20px;
 }
 
 .paper {
@@ -23,12 +30,8 @@ body {
   width: 250px;
   height: 200px;
   overflow: hidden;
+  border-radius: 10px; /* Sedikit sudut lembut */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.paper:hover {
-  transform: translateY(-10px); /* Gerakan hover yang sederhana */
-  box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.4); /* Efek bayangan lebih dramatis saat hover */
 }
 
 .paper.heart {
@@ -36,15 +39,8 @@ body {
   height: 150px;
   padding: 0;
   border-radius: 50%;
-}
-
-.paper.image img {
-  max-width: 100%;
-  height: auto;
-}
-
-img {
-  user-select: none;
+  background-color: #ff6f61;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
 .paper.heart::after {
@@ -61,26 +57,56 @@ img {
   opacity: 0.6;
 }
 
-p {
-  font-family: 'Zeyada';
-  font-size: 16px;
-  color: rgb(0,0,100);
-  opacity: 0.75;
-  user-select: none;
-  text-align: center;
+.paper.image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px; /* Gambar sedikit lembut di sudut */
 }
 
-/* Disable responsiveness and keep desktop layout on all devices */
-@media only screen and (max-width: 600px) {
-  body {
-    overflow: auto;
-  }
+img {
+  user-select: none;
+}
 
+p {
+  font-family: 'Short Stack', sans-serif;
+  font-size: 16px;
+  color: #333; /* Warna teks yang netral dan lembut */
+  opacity: 0.9;
+  user-select: none;
+  text-align: center;
+  margin: 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #ff4500; /* Warna link yang lebih mencolok */
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff6347; /* Warna link saat di-hover */
+}
+
+audio {
+  margin-top: 10px;
+  outline: none;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8em;
+  color: #d2691e;
+  margin-top: 30px;
+}
+
+@media (max-width: 600px) {
   .paper {
-    position: absolute;
-    width: 250px;
-    height: 200px;
-    transform: rotateZ(-5deg);
-    box-shadow: 1px 10px 15px 0px rgba(0, 0, 0, 0.5);
+    width: 200px;
+    height: 160px;
+  }
+  
+  .paper.heart {
+    width: 120px;
+    height: 120px;
   }
 }

@@ -1,14 +1,34 @@
+body {
+  background-color: #FFF4F4; /* Warna pastel lembut */
+  background-image: radial-gradient(circle at top right, #FFDEE9, #B5FFFC); /* Gradien lembut untuk latar belakang */
+  font-family: 'Short Stack', sans-serif;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .paper {
   background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
   background-size: cover;
   background-position: center center;
   padding: 15px;
   transform: rotateZ(-5deg);
-  box-shadow: 1px 10px 15px 0px rgba(0,0,0,0.5);
+  box-shadow: 1px 10px 15px 0px rgba(0, 0, 0, 0.5);
   position: absolute;
-  width: 250px; /* Ukuran width diubah menjadi lebih kecil */
-  height: 200px; /* Ukuran height diubah menjadi lebih kecil */
+  width: 250px;
+  height: 200px;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paper:hover {
+  transform: translateY(-10px); /* Gerakan hover yang sederhana */
+  box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.4); /* Efek bayangan lebih dramatis saat hover */
 }
 
 .paper.heart {
@@ -48,4 +68,24 @@ p {
   opacity: 0.75;
   user-select: none;
   text-align: center;
+}
+
+/* Centering the stack of papers on mobile */
+@media only screen and (max-width: 600px) {
+  body {
+    justify-content: center;
+  }
+
+  .paper {
+    position: relative;
+    margin-bottom: 15px; /* Spacing between papers */
+    transform: none;
+    width: 90%;
+    height: auto;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3); /* Slightly softer shadow on mobile */
+  }
+
+  .paper.heart {
+    margin-bottom: 20px;
+  }
 }

@@ -70,22 +70,17 @@ p {
   text-align: center;
 }
 
-/* Centering the stack of papers on mobile */
+/* Disable responsiveness and keep desktop layout on all devices */
 @media only screen and (max-width: 600px) {
   body {
-    justify-content: center;
+    overflow: auto;
   }
 
   .paper {
-    position: relative;
-    margin-bottom: 15px; /* Spacing between papers */
-    transform: none;
-    width: 90%;
-    height: auto;
-    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3); /* Slightly softer shadow on mobile */
-  }
-
-  .paper.heart {
-    margin-bottom: 20px;
+    position: absolute;
+    width: 250px;
+    height: 200px;
+    transform: rotateZ(-5deg);
+    box-shadow: 1px 10px 15px 0px rgba(0, 0, 0, 0.5);
   }
 }
